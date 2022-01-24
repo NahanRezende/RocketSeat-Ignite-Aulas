@@ -1,0 +1,45 @@
+import { useState } from 'react'
+
+//Sempre que uma função começa com use, chamamos ela de hook
+
+/*O user State retorna um array de duas posições 0 e 1, onde a posição 1 tem o poder de alterar a posição 0
+por isso usamos counter e setCounter*/
+
+
+/*
+  Imutabilidade => diz que uma variavél nunca poderá mudar o valor da variável e sim atribuir a ela um novo valor
+  Mutação:
+  usuarios = ['nahan', 'nahan2']
+  usuarios.push('nahan3')
+  *resultado*
+  usuarios = ['nahan', 'nahan2', 'nahan3']
+  porque mutamos o estado da variavel usuarios
+
+  Imutabilidade:
+  novosUsuários = [...usuarios, 'nahan3']
+
+  Por isso usamos setCounter e não add counter, porque estamos setando um novo valor para counter.
+*/
+
+
+
+
+export function Counter(){
+  const [counter, setCounter] = useState(0);
+
+  function increment(){
+    setCounter(counter + 1);
+  }
+
+  function decrement(){
+    setCounter(counter - 1);
+  }
+
+  return(
+    <div>
+      <h2>{counter}</h2>
+      <button type='button' onClick={increment}>Increment +1</button>
+      <button type='button' onClick={decrement}>Decrement -1</button>
+    </div>
+  )
+}
